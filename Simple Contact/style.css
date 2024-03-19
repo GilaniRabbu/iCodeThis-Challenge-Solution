@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap');
+
+:root {
+    font-size: 62.5%;
+
+    --fs-h1-clamp: clamp(2.4rem, 1.0184rem + 2.683vw, 3.4331rem);
+    --fs-h2-clamp: clamp(1.325rem, 0.8818rem + 2.0723vw, 1.5rem);
+    --fs-h3-clamp: clamp(1.325rem, 0.7607rem + 1.75vw, 2.125rem);
+    --fs-body-clamp: clamp(1rem, 0.6548rem + 1.2259vw, 1.25rem);
+    --fs-small-clamp: clamp(0.625rem, 0.4821rem + 0.7143vw, 1.125rem);
+
+    --fs-h1: var(--fs-h1-clamp);
+    --fs-h2: var(--fs-h2-clamp);
+    --fs-h3: var(--fs-h3-clamp);
+    --fs-body: var(--fs-body-clamp);
+    --fs-small: var(--fs-small-clamp);
+
+    --clr-primary-100: #525AF2;
+    --clr-primary-200: #1DA1F2;
+    --clr-primary-300: #DFEBF2;
+    --clr-primary-400: #0D0D0D;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+html {
+    color-scheme: dark light;
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: var(--fs-body);
+    background-color: var(--clr-primary-300);
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: var(--fs-h2);
+    font-weight: 600;
+}
+
+p {
+    font-weight: 400;
+}
+
+.card {
+    width: 35rem;
+    text-align: center;
+    padding: 4em 6em;
+    border-radius: 5px;
+    position: relative;
+    color: var(--clr-primary-300);
+    background-color: var(--clr-primary-100);
+}
+
+.flow>*+* {
+    margin-top: 1.5em;
+}
+
+button {
+    cursor: pointer;
+    font-weight: 600;
+    padding: 0.75em 1.5em;
+    border: 0;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+    color: var(--clr-primary-300);
+    background-color: var(--clr-primary-200);
+}
+
+button:hover {
+    background-color: var(--clr-primary-400);
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    width: 90px;
+    aspect-ratio: 1 / 1;
+    background: rgb(82, 90, 242, 0.2);
+    border-radius: 5px;
+    z-index: -1;
+    bottom: -3rem;
+    right: -3rem;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    width: 160px;
+    aspect-ratio: 1 / 1;
+    background: rgb(82, 90, 242, 0.2);
+    border-radius: 5px;
+    z-index: -1;
+    top: -4rem;
+    left: -6rem;
+}
+
+.card span {
+    content: "";
+    position: absolute;
+    width: 30px;
+    aspect-ratio: 1 / 1;
+    background: rgb(82, 90, 242, 0.2);
+    border-radius: 5px;
+    z-index: -1;
+    bottom: -8rem;
+    right: -6rem;
+}
+
+@media (max-width: 500px) {
+    .card {
+        width: 25rem;
+        padding: 2em 3em;
+    }
+
+    .card::after {
+        width: 50px;
+        bottom: -2rem;
+        right: -2rem;
+    }
+
+    .card::before {
+        width: 100px;
+        top: -2rem;
+        left: -3rem;
+    }
+
+    .card span {
+        width: 25px;
+        bottom: -5.5rem;
+        right: 3.5rem;
+    }
+}
