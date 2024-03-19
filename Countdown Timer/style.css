@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+:root {
+    font-size: 62.5%;
+
+    --fs-h1-clamp: clamp(3.25rem, 1.0184rem + 2.683vw, 4.5rem);
+    --fs-h2-clamp: clamp(1.75rem, 0.8818rem + 2.0723vw, 2.5rem);
+    --fs-h3-clamp: clamp(1.325rem, 0.7607rem + 1.75vw, 2.125rem);
+    --fs-body-clamp: clamp(1.125rem, 0.6548rem + 1.2259vw, 1.5rem);
+    --fs-small-clamp: clamp(0.625rem, 0.4821rem + 0.7143vw, 1.125rem);
+
+    --fs-h1: var(--fs-h1-clamp);
+    --fs-h2: var(--fs-h2-clamp);
+    --fs-h3: var(--fs-h3-clamp);
+    --fs-body: var(--fs-body-clamp);
+    --fs-small: var(--fs-small-clamp);
+
+    --clr-primary-100: #F2F2F2;
+    --clr-primary-200: #236E8C;
+
+    --gradient: linear-gradient(90deg, #EE6352, #5255EE, #EE6352);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    line-height: 1.5;
+    min-height: 100vh;
+    background: #DDD;
+    background-size: 300%;
+    background-image: var(--gradient);
+    animation: animation 20s infinite;
+}
+
+@keyframes animation {
+    0% {
+        background-position: left
+    }
+
+    50% {
+        background-position: right
+    }
+
+    100% {
+        background-position: left
+    }
+}
+
+header {
+    color: var(--clr-primary-100);
+    font-weight: 600;
+    padding-block-start: 5em;
+    padding-block-end: 2em;
+}
+
+.countdown {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    justify-content: center;
+    padding-block: 2em;
+}
+
+.countdown-section {
+    display: inline-block;
+    width: clamp(100px, 50%, 200px);
+    padding-block: 5em;
+    border-radius: 3px;
+    color: var(--clr-primary-200);
+    background-color: var(--clr-primary-100);
+    box-shadow: 7px 7px rgb(242, 242, 242, 0.5);
+}
+
+.title {
+    font-size: var(--fs-h1);
+}
+
+.desc {
+    font-size: var(--fs-body);
+}
+
+span {
+    font-size: var(--fs-h1);
+    font-weight: 700;
+}
+
+h2 {
+    font-size: var(--fs-h3);
+    text-transform: uppercase;
+    font-weight: 600;
+}
