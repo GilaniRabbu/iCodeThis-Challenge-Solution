@@ -1,0 +1,43 @@
+:root {
+    font-size: 62.5%;
+
+    --fs-h1-clamp: clamp(2.4rem, 1.0184rem + 2.683vw, 3.4331rem);
+    --fs-h2-clamp: clamp(1.25rem, 0.8818rem + 2.0723vw, 1.5rem);
+    --fs-h3-clamp: clamp(1.325rem, 0.7607rem + 1.75vw, 2.125rem);
+    --fs-body-clamp: clamp(1rem, 0.6548rem + 1.2259vw, 1.2581rem);
+    --fs-small-clamp: clamp(0.625rem, 0.4821rem + 0.7143vw, 1.125rem);
+
+    --fs-h1: var(--fs-h1-clamp);
+    --fs-h2: var(--fs-h2-clamp);
+    --fs-h3: var(--fs-h3-clamp);
+    --fs-body: var(--fs-body-clamp);
+    --fs-small: var(--fs-small-clamp);
+}
+
+body {
+    background-color: hsla(210, 100%, 50%, 0.20);
+}
+
+.card {
+    border-color: hsla(210, 100%, 50%, 0.75);
+}
+
+.text-desc {
+    color: hsla(210, 100%, 50%, 0.75);
+    font-size: var(--fs-h2);
+    font-weight: 700;
+}
+
+.price {
+    color: hsla(210, 100%, 50%);
+    font-size: var(--fs-h2);
+    font-weight: 700;
+}
+
+.badge {
+    background-color: hsla(210, 100%, 50%, 0.75);
+    font-size: var(--fs-body);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
