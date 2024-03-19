@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+body {
+    font-size: 1.125rem;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(33, 35, 48);
+}
+
+main {
+    animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes scale-in-center {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.user__name {
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    width: 80px;
+    height: 80px;
+    font-size: 1.25rem;
+    padding: 0.8rem;
+    margin-left: auto;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+    color: rgb(248, 178, 15);
+    border: 2px solid rgb(248, 178, 15);
+    transition: 0.1s ease;
+}
+
+.user__name:hover {
+    color: rgb(33, 35, 48);
+    background-color: rgb(248, 178, 15);
+    outline: 2px solid rgb(248, 178, 15);
+    outline-offset: 0.25rem;
+}
+
+.hidden__card {
+    display: none;
+}
+
+.scale {
+    scale: 1.5;
+    animation: heartbeat 1.3s ease-in-out infinite both;
+}
+
+@keyframes heartbeat {
+    from {
+        transform: scale(1);
+        transform-origin: center center;
+        animation-timing-function: ease-out;
+    }
+
+    10% {
+        transform: scale(0.91);
+        animation-timing-function: ease-in;
+    }
+
+    17% {
+        transform: scale(0.98);
+        animation-timing-function: ease-out;
+    }
+
+    33% {
+        transform: scale(0.87);
+        animation-timing-function: ease-in;
+    }
+
+    45% {
+        transform: scale(1);
+        animation-timing-function: ease-out;
+    }
+}
+
+.card {
+    background-color: rgb(255, 255, 255);
+    width: 400px;
+    padding: 3rem;
+    border-radius: 10px;
+}
+
+.name__row {
+    color: rgb(33, 35, 48);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.change__text {
+    color: rgb(248, 178, 15);
+    cursor: pointer;
+    transition: 0.1s ease;
+}
+
+.change__text:hover {
+    color: rgb(33, 35, 48);
+}
+
+.btn {
+    display: inline-block;
+    width: 100%;
+    margin-top: 2rem;
+    padding: 1rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.1s ease;
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(248, 178, 15);
+}
+
+.btn:is(:hover, :focus) {
+    transform: scale(1.1);
+}
+
+.row__group {
+    color: rgb(33, 35, 48);
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.border-1 {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgb(33, 35, 48, 0.5);
+}
+
+i {
+    cursor: pointer;
+}
+
+.fa-gear:hover,
+.fa-headset:hover,
+.fa-circle-minus:hover {
+    animation: none;
+}
+
+@media (max-width: 400px) {
+    .card {
+        width: 300px;
+        padding: 2rem;
+    }
+}
